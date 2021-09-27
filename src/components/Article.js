@@ -1,4 +1,4 @@
-import { Box, CircularProgress } from '@mui/material';
+import { Box, CircularProgress, Grow } from '@mui/material';
 import React from 'react';
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
@@ -28,26 +28,28 @@ class Article extends React.Component {
             return <Box sx={{ textAlign: 'center' }}><CircularProgress /></Box>
         } else {
             return (
-                <Card key={article.id} sx={{ maxWidth: 345 }}>
-                    <CardMedia
-                        component="img"
-                        height="140"
-                        image="https://picsum.photos/345/140"
-                        alt="green iguana"
-                    />
-                    <CardContent>
-                        <Typography gutterBottom variant="h5" component="div">
-                            {article.title}
-                        </Typography>
-                        <Typography variant="body2" color="text.secondary">
-                            {article.content}
-                        </Typography>
-                    </CardContent>
-                    <CardActions>
-                        <Button size="small">Share</Button>
-                        <Button size="small">Learn More</Button>
-                    </CardActions>
-                </Card>
+                <Grow in={loaded} {...(loaded ? { timeout: 1000 } : {})}>
+                    <Card style={{ background: '#242038', color: 'white' }} key={article.id} sx={{ maxWidth: 345 }}>
+                        <CardMedia
+                            component="img"
+                            height="140"
+                            image="https://picsum.photos/345/140"
+                            alt="green iguana"
+                        />
+                        <CardContent>
+                            <Typography gutterBottom variant="h5" component="div">
+                                {article.title}
+                            </Typography>
+                            <Typography variant="body2" color="white">
+                                {article.content}
+                            </Typography>
+                        </CardContent>
+                        <CardActions>
+                            <Button size="small">Share</Button>
+                            <Button size="small">Learn More</Button>
+                        </CardActions>
+                    </Card>
+                </Grow>
             )
         }
     }

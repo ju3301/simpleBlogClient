@@ -1,4 +1,4 @@
-import { Box, Card, CircularProgress, Grid } from '@mui/material';
+import { Box, CircularProgress, Grid } from '@mui/material';
 import React from 'react';
 import Article from './Article';
 
@@ -38,19 +38,20 @@ class Articles extends React.Component {
 
     render() {
         const { loaded, items } = this.state
-        console.log(loaded, items)
+
         if (loaded === false) {
             return <Box sx={{ textAlign: 'center' }}><CircularProgress /></Box>
         } else {
             return (
-                <Grid container direction="row" justifyContent="space-around" rowSpacing={{ xs: 1, sm: 2, md: 3 }} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
+                <Grid container rowSpacing={{ xs: 1, sm: 2, md: 3 }}>
                     {items.map((element) => {
                         return (
-                            <Grid item key={element.id}>
-                                <Article article={element} />
+                            <Grid item xs={12} md={6} lg={4} xl={3} display="flex" justifyContent="center" key={element.id} >
+                                <Article article={element} key={element.id} />
                             </Grid>
                         )
-                    })}
+                    })
+                    }
                 </Grid>
 
             )
