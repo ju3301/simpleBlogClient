@@ -22,6 +22,7 @@ class Article extends React.Component {
     }
 
     render() {
+        console.log('article render')
         const { loaded } = this.state
         const { article } = this.props
         if (loaded === false) {

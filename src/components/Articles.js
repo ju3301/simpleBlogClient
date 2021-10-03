@@ -23,6 +23,7 @@ class Articles extends React.Component {
                         loaded: true,
                         items: result
                     });
+                    console.log('article request')
                 },
                 // Remarque : il est important de traiter les erreurs ici
                 // au lieu d'utiliser un bloc catch(), pour ne pas passer à la trappe
