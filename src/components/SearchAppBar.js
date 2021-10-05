@@ -9,6 +9,7 @@ import InputBase from '@mui/material/InputBase';
 import MenuIcon from '@mui/icons-material/Menu';
 import SearchIcon from '@mui/icons-material/Search';
 import { Button, Slide } from '@mui/material';
+import { withRouter } from 'react-router-dom';
 
 const Search = styled('div')(({ theme }) => ({
     position: 'relative',
@@ -52,7 +53,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
     },
 }));
 
-export default function SearchAppBar() {
+function SearchAppBar() {
     return (
         <Slide direction="right" in={true} mountOnEnter unmountOnExit>
             <Box marginBottom={3} sx={{ flexGrow: 1 }} display="flex" justifyContent="center" >
@@ -93,3 +94,5 @@ export default function SearchAppBar() {
         </Slide>
     );
 }
+
+export default withRouter(SearchAppBar);

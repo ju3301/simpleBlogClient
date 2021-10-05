@@ -35,7 +35,7 @@ class Article extends React.Component {
                             component="img"
                             height="140"
                             image="https://picsum.photos/345/140"
-                            alt="green iguana"
+                            alt="picture"
                         />
                         <CardContent>
                             <Typography gutterBottom variant="h5" component="div">
