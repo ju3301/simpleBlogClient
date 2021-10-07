@@ -4,6 +4,7 @@ import React from 'react';
 import { default as Articles } from './components/Articles';
 import SearchAppBar from './components/SearchAppBar';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import Login from './components/Login';
 
 class App extends React.Component {
   render() {
@@ -14,6 +15,7 @@ class App extends React.Component {
           <SearchAppBar />
           <Switch>
             <Route path="/" exact component={() => <Articles />} />
+            <Route path="/login" exact component={() => <Login />} />
           </Switch>
         </BrowserRouter>
       </div >
